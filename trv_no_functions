@@ -1,0 +1,54 @@
+import time
+# this program calculates flight cost to multiple destinations
+
+print("This program calculates the cost for your trip by plane")
+city=str(input("Where would you like to travel:"))
+nights=int(input("How many nights do you plan to stay at the hotel: "))
+
+rental_car=str(input("Do you need a rental car: y/n "))
+if rental_car=="y" or rental_car=="Y":
+    car_days= int(input("How many days do you need a rental car: "))
+budget= float(input("What is your total budget: "))
+
+print("Calculating..")
+time.sleep(2)
+
+flight_cost= 0
+print("You flight cost is: ")
+if city == 'Charlotte':
+    city=flight_cost+183
+    print(city)
+elif city == 'Tampa':
+    city=flight_cost+193
+    print(city)
+elif city == 'Pittsburgh':
+    city=flight_cost+83
+    print(city)
+elif city == "Los Angeles":
+    city=flight_cost+250
+    print(city)
+
+time.sleep(1)
+print("Your hotel cost is: ")
+if nights>0:
+    print(140 *nights)
+
+time.sleep(1)
+print("Your rental car cost is: ")
+
+if car_days >= 7:
+    print(car_days*50)
+elif car_days >= 3 and car_days< 7:
+    print(car_days*60)
+elif car_days<3 and car_days>0:
+    print(car_days*65)
+else:
+    print("not a valid number")
+
+time.sleep(1)
+trip_cost= city + nights*city+ car_days
+print("Your trip cost is: ", trip_cost)
+time.sleep(1)
+print("You have a remaining spending balance of", budget-trip_cost)
+time.sleep(2)
+print("thank you for using this app")
